@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
