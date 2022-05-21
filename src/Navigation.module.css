@@ -9,6 +9,7 @@
   text-decoration: none;
 }
 
+.link[aria-current="page"],
 .link:hover {
   text-decoration: underline;
 }

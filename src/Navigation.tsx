@@ -4,7 +4,7 @@ import styles from "./Navigation.module.css";
 const Navigation: Component = () => {
   return (
     <nav class={styles.container}>
-      <a href="/" class={styles.link}>
+      <a href="/" class={styles.link} aria-current="page">
         Link 1
       </a>
       <a href="/" class={styles.link}>
