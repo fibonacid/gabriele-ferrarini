@@ -2,8 +2,7 @@
 }
 
 .content {
-  position: relative;
-  left: var(--sidebar-width);
+  margin-left: var(--sidebar-width);
   padding: var(--space-sm);
 }
 
@@ -14,4 +13,6 @@
   bottom: 0;
   width: var(--sidebar-width);
   padding: var(--space-sm);
+  border-right: solid var(--border-color) 1px;
+  box-sizing: border-box;
 }

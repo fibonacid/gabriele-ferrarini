@@ -10,10 +10,11 @@
   --space-4xl: 12rem;
 
   /* Layout */
-  --sidebar-width: 6rem;
+  --sidebar-width: var(--space-2xl);
 
   /* Colors */
   --text-color: #000;
+  --border-color: #ccc;
 }
 
 body {
