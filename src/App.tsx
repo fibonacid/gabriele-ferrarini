@@ -1,12 +1,11 @@
 import type { Component } from "solid-js";
-
-import styles from "./App.module.css";
+import Layout from "./Layout";
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
+    <Layout>
       <h1>Gabriele Ferrarini</h1>
-    </div>
+    </Layout>
   );
 };
 
