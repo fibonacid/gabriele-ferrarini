@@ -1,3 +1,21 @@
 :root {
+  /* Space */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+  --space-4xl: 12rem;
+
+  /* Layout */
   --sidebar-width: 6rem;
+
+  /* Colors */
+  --text-color: #000;
+}
+
+body {
+  color: var(--text-color);
 }
