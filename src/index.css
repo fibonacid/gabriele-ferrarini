@@ -14,9 +14,21 @@
 
   /* Colors */
   --text-color: #000;
-  --border-color: #ccc;
+  --border-color: #ddd;
+
+  /* Fonts */
+  --font-primary: "Gowun Batang", serif;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5rem;
+  --text-xl: 2rem;
 }
 
 body {
   color: var(--text-color);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
 }
