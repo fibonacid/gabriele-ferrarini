@@ -4,7 +4,7 @@ import Layout from "./Layout";
 const App: Component = () => {
   return (
     <Layout>
-      <h1>Gabriele Ferrarini</h1>
+      <h1>Welcome</h1>
     </Layout>
   );
 };

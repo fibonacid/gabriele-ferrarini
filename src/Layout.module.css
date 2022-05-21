@@ -1,7 +1,19 @@
-.container {
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  margin-left: var(--sidebar-width);
+  border-bottom: solid var(--border-color) 1px;
+
+  display: flex;
+  align-items: center;
+  padding-left: var(--space-sm);
 }
 
 .content {
+  margin-top: var(--header-height);
   margin-left: var(--sidebar-width);
   padding: var(--space-sm);
 }

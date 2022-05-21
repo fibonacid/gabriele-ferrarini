@@ -9,6 +9,7 @@ type Props = {
 const Layout: Component<Props> = ({ children }) => {
   return (
     <div class={styles.container}>
+      <header class={styles.header}>Gabriele Ferrarini</header>
       <div class={styles.sidebar}>
         <Navigation />
       </div>

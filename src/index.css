@@ -11,6 +11,7 @@
 
   /* Layout */
   --sidebar-width: var(--space-2xl);
+  --header-height: var(--space-lg);
 
   /* Colors */
   --text-color: #000;
