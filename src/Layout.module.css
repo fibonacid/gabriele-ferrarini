@@ -37,16 +37,27 @@
 .sidebar {
   position: fixed;
   inset: 0;
-  padding: var(--space-sm);
+  padding: var(--header-height) 0;
   box-sizing: border-box;
   transform: translateX(100%);
   transition: transform 0.3s;
-  background-color: var(--bg-color);
   z-index: var(--index-2);
+}
+
+.sidebar::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  transition: background-color 0.6s;
+  inset: 0;
 }
 
 .open .sidebar {
   transform: translateX(0);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.open .sidebar::after {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .footer {
@@ -102,5 +113,12 @@
     width: var(--sidebar-width);
     border-right: solid var(--border-color) 1px;
     transform: none;
+    height: unset;
+    background-color: unset;
+    z-index: unset;
+    padding: var(--space-sm);
+  }
+  .sidebar::after {
+    content: none;
   }
 }

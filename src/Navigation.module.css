@@ -1,16 +1,32 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  position: relative;
+  z-index: var(--index-1);
 }
 
 .link {
   color: var(--text-color);
   text-decoration: none;
+  padding: var(--space-sm);
+  border-bottom: solid var(--border-color) 1px;
+  background-color: var(--bg-color);
 }
 
 .link[aria-current="page"],
 .link.active,
 .link:hover {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: unset;
+  }
+  .link {
+    padding: 0;
+    border-bottom: none;
+    display: block;
+    margin-bottom: 1rem;
+  }
 }
