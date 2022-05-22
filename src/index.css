@@ -38,6 +38,16 @@
   --index-4: 40;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --border-color: #ddd;
+    --border-color: #333;
+    --bg-color: #111;
+    --placeholder-color: #333;
+  }
+}
+
 html,
 body,
 #root {
@@ -48,4 +58,5 @@ body {
   color: var(--text-color);
   font-family: var(--font-primary);
   font-size: var(--text-sm);
+  background: var(--bg-color);
 }
