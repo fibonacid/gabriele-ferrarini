@@ -33,7 +33,11 @@
   padding: var(--space-sm);
   box-sizing: border-box;
   transform: translateX(100%);
+}
+
+.sidebar.open {
   transition: transform 0.3s;
+  transform: translateX(0);
 }
 
 .footer {
