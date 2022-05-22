@@ -1,12 +1,6 @@
-import {
-  Component,
-  createEffect,
-  createResource,
-  For,
-  onMount,
-} from "solid-js";
-import styles from "./Gallery.module.css";
 import gsap from "gsap";
+import { Component, createEffect, createResource, For } from "solid-js";
+import styles from "./Gallery.module.css";
 
 type Image = {
   src: string;
