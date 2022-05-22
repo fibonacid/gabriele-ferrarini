@@ -1,3 +1,4 @@
+import { Link } from "solid-app-router";
 import { Component, createMemo, JSX, onMount, Suspense } from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
@@ -36,7 +37,9 @@ const Layout: Component<Props> = ({ children }) => {
   return (
     <Suspense fallback={<Scheleton />}>
       <div class={styles.container}>
-        <header class={styles.header}>Gabriele Ferrarini</header>
+        <header class={styles.header}>
+          <Link href="/">Gabriele Ferrarini</Link>
+        </header>
         <div class={styles.sidebar}>
           <Navigation />
         </div>

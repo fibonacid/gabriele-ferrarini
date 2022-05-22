@@ -18,6 +18,11 @@
   padding-left: var(--space-sm);
 }
 
+.header a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
 .content {
   position: relative;
   min-height: 100%;
