@@ -1,5 +1,12 @@
-import { Component, createResource, For } from "solid-js";
+import {
+  Component,
+  createEffect,
+  createResource,
+  For,
+  onMount,
+} from "solid-js";
 import styles from "./Gallery.module.css";
+import gsap from "gsap";
 
 type Image = {
   src: string;
@@ -45,11 +52,25 @@ const GalleryItem: Component<Image> = (props) => {
   );
 };
 
+const [data] = createResource(fetchData);
+
 const Gallery: Component = () => {
-  const [data] = createResource(fetchData);
+  let container: HTMLDivElement | undefined;
+
+  createEffect((prev) => {
+    if (!prev && data() && container) {
+      gsap.from(container.children, {
+        stagger: 0.05,
+        duration: 0.25,
+        opacity: 0,
+        ease: "power2.out",
+      });
+      return true;
+    }
+  });
 
   return (
-    <div class={styles.container}>
+    <div ref={container} class={styles.container}>
       <For each={data()?.images}>{GalleryItem}</For>
     </div>
   );
