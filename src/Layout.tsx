@@ -1,4 +1,4 @@
-import { Component, JSX } from "solid-js";
+import { Component, JSX, Suspense } from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
 
@@ -11,7 +11,9 @@ const Layout: Component<Props> = ({ children }) => {
     <div class={styles.container}>
       <header class={styles.header}>Gabriele Ferrarini</header>
       <div class={styles.sidebar}>
-        <Navigation />
+        <Suspense>
+          <Navigation />
+        </Suspense>
       </div>
       <main class={styles.content}>{children}</main>
     </div>
