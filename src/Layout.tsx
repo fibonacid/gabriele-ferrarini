@@ -7,13 +7,8 @@ type Props = {
 };
 
 const Filler: Component = () => {
-  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-  return (
-    <div
-      class={styles.filler}
-      style={`background-color: #${randomColor}`}
-    ></div>
-  );
+  const bgColor = Math.floor(Math.random() * 16777215).toString(16);
+  return <div class={styles.filler} style={`--bg-color: #${bgColor}`}></div>;
 };
 
 const Scheleton: Component = () => {
