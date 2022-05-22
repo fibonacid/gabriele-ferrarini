@@ -9,6 +9,7 @@
   max-width: 100%;
   width: 100%;
   background-color: var(--placeholder-color);
+  opacity: 0;
 }
 
 .image {

@@ -1,6 +1,9 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { Component, createEffect, createResource, For } from "solid-js";
 import styles from "./Gallery.module.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Image = {
   src: string;
@@ -71,11 +74,19 @@ const Gallery: Component = () => {
 
   createEffect((prev) => {
     if (!prev && data() && container) {
-      gsap.from(container.children, {
-        stagger: 0.05,
-        duration: 0.25,
-        opacity: 0,
-        ease: "power2.out",
+      ScrollTrigger.batch(container.children, {
+        onEnter: (batch) => {
+          gsap.to(batch, { opacity: 1, stagger: 0.15 });
+        },
+        onEnterBack: (batch) => {
+          gsap.to(batch, { opacity: 1, stagger: 0.15 });
+        },
+        onLeave: (batch) => {
+          gsap.to(batch, { opacity: 0, stagger: 0.15 });
+        },
+        onLeaveBack: (batch) => {
+          gsap.to(batch, { opacity: 0, stagger: 0.15 });
+        },
       });
       return true;
     }
