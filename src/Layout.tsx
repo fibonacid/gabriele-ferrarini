@@ -1,5 +1,6 @@
 import { Link } from "solid-app-router";
 import { Component, createMemo, JSX, onMount, Suspense } from "solid-js";
+import HeaderButton from "./HeaderButton";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
 
@@ -39,6 +40,7 @@ const Layout: Component<Props> = ({ children }) => {
       <div class={styles.container}>
         <header class={styles.header}>
           <Link href="/">Gabriele Ferrarini</Link>
+          <HeaderButton />
         </header>
         <div class={styles.sidebar}>
           <Navigation />

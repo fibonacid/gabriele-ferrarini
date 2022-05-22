@@ -1,0 +1,8 @@
+.container {
+  height: var(--header-height);
+  width: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
