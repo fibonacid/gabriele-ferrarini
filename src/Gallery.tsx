@@ -11,7 +11,7 @@ type Data = {
   images: Image[];
 };
 
-const fetchData = async () => {
+const fetchData = () => {
   const images: Image[] = [
     { src: "https://dummyimage.com/600x400/000/fff", width: 600, height: 400 },
     { src: "https://dummyimage.com/300x400/000/fff", width: 300, height: 400 },
@@ -20,7 +20,7 @@ const fetchData = async () => {
     { src: "https://dummyimage.com/300x600/000/fff", width: 300, height: 600 },
     { src: "https://dummyimage.com/700x500/000/fff", width: 700, height: 500 },
   ];
-  return await new Promise<Data>((resolve) => {
+  return new Promise<Data>((resolve) => {
     setTimeout(() => resolve({ images }), 1000);
   });
 };
