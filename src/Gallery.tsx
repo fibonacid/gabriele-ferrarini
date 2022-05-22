@@ -21,7 +21,7 @@ const GalleryItem: Component<Image> = (props) => {
   const aspectRatio = width / height;
   return (
     <div class={styles.wrapper} style={`aspect-ratio: ${aspectRatio};`}>
-      <img class={styles.image} src={src} alt="" />
+      <img class={styles.image} src={src} alt="" loading="lazy" />
     </div>
   );
 };
