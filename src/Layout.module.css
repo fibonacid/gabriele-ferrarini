@@ -1,5 +1,6 @@
 .container {
   height: 100%;
+  animation: fade-in 0.3s;
 }
 
 .header {
@@ -55,6 +56,12 @@
   position: absolute;
   inset: 0;
   background-color: var(--bg-color);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
 
 @media screen and (min-width: 728px) {
