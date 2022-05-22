@@ -10,12 +10,13 @@
   --space-4xl: 12rem;
 
   /* Layout */
-  --sidebar-width: var(--space-2xl);
+  --sidebar-width: var(--space-4xl);
   --header-height: var(--space-lg);
 
   /* Colors */
   --text-color: #000;
   --border-color: #ddd;
+  --bg-color: #fff;
 
   /* Fonts */
   --font-primary: "Gowun Batang", serif;
@@ -26,6 +27,13 @@
   --text-md: 1.25rem;
   --text-lg: 1.5rem;
   --text-xl: 2rem;
+
+  /* Z-Index */
+  --index-0: 0;
+  --index-1: 10;
+  --index-2: 20;
+  --index-3: 30;
+  --index-4: 40;
 }
 
 body {
