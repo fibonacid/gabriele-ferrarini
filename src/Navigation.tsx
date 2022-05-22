@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { Component, createResource, For, onMount } from "solid-js";
+import { NavLink } from "solid-app-router";
 import styles from "./Navigation.module.css";
 
 type Link = {
@@ -14,11 +15,9 @@ type Data = {
 
 const fetchData = () => {
   const links = [
-    { href: "/", title: "Link 1" },
-    { href: "/", title: "Link 2" },
-    { href: "/", title: "Link 3" },
-    { href: "/", title: "Link 4" },
-    { href: "/", title: "Link 5" },
+    { href: "/", title: "Home" },
+    { href: "/about", title: "About" },
+    { href: "/contacts", title: "Contacts" },
   ];
   return new Promise<Data>((resolve) =>
     setTimeout(() => resolve({ links }), 1000)
@@ -44,14 +43,10 @@ const Navigation: Component = () => {
   return (
     <nav ref={container} class={styles.container}>
       <For each={data()?.links || []}>
-        {(item, index) => (
-          <a
-            href="/"
-            class={styles.link}
-            aria-current={index() === 0 && "page"}
-          >
+        {(item) => (
+          <NavLink href={item.href} class={styles.link} end>
             {item.title}
-          </a>
+          </NavLink>
         )}
       </For>
     </nav>

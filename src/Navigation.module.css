@@ -10,6 +10,7 @@
 }
 
 .link[aria-current="page"],
+.link.active,
 .link:hover {
   text-decoration: underline;
 }
