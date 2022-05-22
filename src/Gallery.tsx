@@ -5,6 +5,7 @@ type Image = {
   src: string;
   width: number;
   height: number;
+  alt?: string;
 };
 
 type Data = {
@@ -26,11 +27,11 @@ const fetchData = () => {
 };
 
 const GalleryItem: Component<Image> = (props) => {
-  const { width, height, src } = props;
+  const { width, height, src, alt } = props;
   const aspectRatio = width / height;
   return (
     <div class={styles.wrapper} style={`aspect-ratio: ${aspectRatio};`}>
-      <img class={styles.image} src={src} alt="" loading="lazy" />
+      <img class={styles.image} src={src} alt={alt || ""} loading="lazy" />
     </div>
   );
 };
