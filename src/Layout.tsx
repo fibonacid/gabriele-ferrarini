@@ -1,4 +1,4 @@
-import { Component, createMemo, JSX, Suspense } from "solid-js";
+import { Component, createMemo, JSX, onMount, Suspense } from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
 

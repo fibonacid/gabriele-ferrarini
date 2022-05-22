@@ -1,4 +1,5 @@
-import { Component, createResource, For } from "solid-js";
+import gsap from "gsap";
+import { Component, createResource, For, onMount } from "solid-js";
 import styles from "./Navigation.module.css";
 
 type Link = {
@@ -27,8 +28,21 @@ const fetchData = () => {
 const [data] = createResource(fetchData);
 
 const Navigation: Component = () => {
+  let container: HTMLElement | undefined;
+
+  onMount(() => {
+    if (container) {
+      gsap.from(container.children, {
+        stagger: 0.05,
+        duration: 0.3,
+        opacity: 0,
+        ease: "power2.out",
+      });
+    }
+  });
+
   return (
-    <nav class={styles.container}>
+    <nav ref={container} class={styles.container}>
       <For each={data()?.links || []}>
         {(item, index) => (
           <a
