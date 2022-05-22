@@ -12,7 +12,7 @@
   /* Layout */
   --sidebar-width: var(--space-4xl);
   --header-height: var(--space-lg);
-  --footer-height: var(--space-lg);
+  --footer-height: var(--space-md);
 
   /* Colors */
   --text-color: #000;

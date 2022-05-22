@@ -46,10 +46,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
   border-top: solid var(--border-color) 1px;
   height: var(--footer-height);
   box-sizing: border-box;
+  font-size: var(--text-xs);
 }
 
 .filler {

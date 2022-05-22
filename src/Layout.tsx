@@ -42,7 +42,9 @@ const Layout: Component<Props> = ({ children }) => {
         </div>
         <main class={styles.content}>
           {children}
-          <footer class={styles.footer}>gabriele ferrarini @{year()}</footer>
+          <footer class={styles.footer}>
+            &copy; Gabriele Ferrarini {year()}
+          </footer>
         </main>
       </div>
     </Suspense>
