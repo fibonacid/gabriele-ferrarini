@@ -15,12 +15,30 @@ type Data = {
 
 const fetchData = () => {
   const images: Image[] = [
-    { src: "https://dummyimage.com/600x400/000/fff", width: 600, height: 400 },
-    { src: "https://dummyimage.com/300x400/000/fff", width: 300, height: 400 },
-    { src: "https://dummyimage.com/400x300/000/fff", width: 400, height: 300 },
-    { src: "https://dummyimage.com/500x500/000/fff", width: 500, height: 500 },
-    { src: "https://dummyimage.com/300x600/000/fff", width: 300, height: 600 },
-    { src: "https://dummyimage.com/700x500/000/fff", width: 700, height: 500 },
+    { src: "/photos/image-00001.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00002.jpg", width: 800, height: 599 },
+    { src: "/photos/image-00003.jpg", width: 800, height: 599 },
+    { src: "/photos/image-00004.jpg", width: 800, height: 599 },
+    { src: "/photos/image-00005.jpg", width: 800, height: 599 },
+    { src: "/photos/image-00006.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00007.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00008.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00009.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00010.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00011.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00012.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00012.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00014.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00015.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00016.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00017.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00018.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00019.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00020.jpg", width: 800, height: 1067 },
+    { src: "/photos/image-00021.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00022.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00023.jpg", width: 500, height: 1067 },
+    { src: "/photos/image-00024.jpg", width: 500, height: 1067 },
   ];
   return new Promise<Data>((resolve) => {
     setTimeout(() => resolve({ images }), 1000);
