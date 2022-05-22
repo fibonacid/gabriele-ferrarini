@@ -6,10 +6,8 @@ import Layout from "./Layout";
 const App: Component = () => {
   return (
     <Layout>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Introduction />
-        <Gallery />
-      </Suspense>
+      <Introduction />
+      <Gallery />
     </Layout>
   );
 };

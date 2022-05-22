@@ -1,5 +1,6 @@
 import { Component, createMemo, JSX, Suspense } from "solid-js";
 import styles from "./Layout.module.css";
+import LayoutScheleton from "./LayoutScheleton";
 import Navigation from "./Navigation";
 
 type Props = {
@@ -10,18 +11,18 @@ const Layout: Component<Props> = ({ children }) => {
   const year = createMemo(() => new Date().getFullYear());
 
   return (
-    <div class={styles.container}>
-      <header class={styles.header}>Gabriele Ferrarini</header>
-      <div class={styles.sidebar}>
-        <Suspense>
+    <Suspense fallback={<LayoutScheleton />}>
+      <div class={styles.container}>
+        <header class={styles.header}>Gabriele Ferrarini</header>
+        <div class={styles.sidebar}>
           <Navigation />
-        </Suspense>
+        </div>
+        <main class={styles.content}>
+          {children}
+          <footer class={styles.footer}>gabriele ferrarini @{year()}</footer>
+        </main>
       </div>
-      <main class={styles.content}>
-        {children}
-        <footer class={styles.footer}>gabriele ferrarini @{year()}</footer>
-      </main>
-    </div>
+    </Suspense>
   );
 };
 

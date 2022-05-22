@@ -1,0 +1,51 @@
+.container {
+  height: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background-color: green;
+  z-index: var(--index-4);
+}
+
+.content {
+  position: absolute;
+  top: var(--header-height);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: blue;
+}
+
+.sidebar {
+  display: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-height);
+  background-color: pink;
+}
+
+@media screen and (min-width: 728px) {
+  .header {
+    left: var(--sidebar-width);
+  }
+  .content {
+    left: var(--sidebar-width);
+  }
+  .sidebar {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: var(--sidebar-width);
+    background: yellow;
+  }
+}
