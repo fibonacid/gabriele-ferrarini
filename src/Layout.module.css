@@ -119,6 +119,6 @@
     padding: var(--space-sm);
   }
   .sidebar::after {
-    content: none;
+    display: none;
   }
 }
