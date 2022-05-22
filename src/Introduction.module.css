@@ -1,4 +1,5 @@
 .container {
   display: flex;
   gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }

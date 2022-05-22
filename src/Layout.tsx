@@ -1,4 +1,4 @@
-import { Component, JSX, Suspense } from "solid-js";
+import { Component, createMemo, JSX, Suspense } from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
 
@@ -7,6 +7,8 @@ type Props = {
 };
 
 const Layout: Component<Props> = ({ children }) => {
+  const year = createMemo(() => new Date().getFullYear());
+
   return (
     <div class={styles.container}>
       <header class={styles.header}>Gabriele Ferrarini</header>
@@ -15,7 +17,10 @@ const Layout: Component<Props> = ({ children }) => {
           <Navigation />
         </Suspense>
       </div>
-      <main class={styles.content}>{children}</main>
+      <main class={styles.content}>
+        {children}
+        <footer class={styles.footer}>gabriele ferrarini @{year()}</footer>
+      </main>
     </div>
   );
 };

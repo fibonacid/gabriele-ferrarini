@@ -12,6 +12,7 @@
   /* Layout */
   --sidebar-width: var(--space-4xl);
   --header-height: var(--space-lg);
+  --footer-height: var(--space-lg);
 
   /* Colors */
   --text-color: #000;
@@ -34,6 +35,12 @@
   --index-2: 20;
   --index-3: 30;
   --index-4: 40;
+}
+
+html,
+body,
+#root {
+  height: 100%;
 }
 
 body {
