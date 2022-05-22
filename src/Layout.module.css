@@ -116,8 +116,16 @@
     background-color: unset;
     z-index: unset;
     padding: var(--space-sm);
+    transition: none;
   }
   .open .sidebar::after {
     display: none;
+  }
+  .open .sidebar {
+    transform: translateX(-100%);
+  }
+  .open .header,
+  .open .content {
+    margin-left: 0;
   }
 }
