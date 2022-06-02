@@ -21,7 +21,7 @@
   --placeholder-color: #eee;
 
   /* Fonts */
-  --font-primary: "Gowun Batang", serif;
+  --font-primary: 'Inter', sans-serif;
 
   /* Font sizes */
   --text-xs: 0.75rem;
