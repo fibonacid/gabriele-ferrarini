@@ -14,8 +14,7 @@
 }
 
 .link[aria-current="page"],
-.link.active,
-.link:hover {
+.link.active {
   text-decoration: underline;
 }
 
@@ -28,5 +27,8 @@
     border-bottom: none;
     display: block;
     margin-bottom: 1rem;
+  }
+  .link:hover {
+    text-decoration: underline;
   }
 }
