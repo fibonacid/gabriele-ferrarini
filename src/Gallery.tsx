@@ -76,16 +76,16 @@ const Gallery: Component = () => {
     if (!prev && data() && container) {
       ScrollTrigger.batch(container.children, {
         onEnter: (batch) => {
-          gsap.to(batch, { opacity: 1, stagger: 0.15 });
+          gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
         },
         onEnterBack: (batch) => {
-          gsap.to(batch, { opacity: 1, stagger: 0.15 });
+          gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
         },
         onLeave: (batch) => {
-          gsap.to(batch, { opacity: 0, stagger: 0.15 });
+          gsap.to(batch, { opacity: 0, stagger: 0.15, duration: 0.2 });
         },
         onLeaveBack: (batch) => {
-          gsap.to(batch, { opacity: 0, stagger: 0.15 });
+          gsap.to(batch, { opacity: 0, stagger: 0.15, duration: 0.2 });
         },
       });
       return true;
