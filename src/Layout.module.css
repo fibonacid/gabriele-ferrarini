@@ -69,6 +69,8 @@
   height: var(--footer-height);
   box-sizing: border-box;
   font-size: var(--text-xs);
+  display: flex;
+  align-items: center;
 }
 
 .filler {
