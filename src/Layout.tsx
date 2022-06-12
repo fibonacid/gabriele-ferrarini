@@ -31,17 +31,35 @@ const Scheleton: Component = () => {
   );
 };
 
-const hamburgerIcon = (
+const plusIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 32 32"
+    xml-space="preserve"
+    fill-rule="evenodd"
+    stroke-linejoin="round"
+    stroke-miterlimit="2"
+    clip-rule="evenodd"
+    viewBox="0 0 11 11"
     width="1em"
     height="1em"
   >
-    <path
-      fill="currentColor"
-      d="M.086 9.773h31.828V7.466H.086v2.307ZM.086 24.534h31.828v-2.307H.086v2.307ZM.086 17.153h31.828v-2.306H.086v2.306Z"
-    />
+    <path fill="currentColor" d="M5 5H0v1h5v5h1V6h5V5H6V0H5v5Z" />
+  </svg>
+);
+
+const minusIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    // xml-space="preserve"
+    // fill-rule="evenodd"
+    // stroke-linejoin="round"
+    // stroke-miterlimit="2"
+    // clip-rule="evenodd"
+    viewBox="0 0 11 11"
+    width="1em"
+    height="1em"
+  >
+    <path fill="currentColor" d="M0 5h11v1H0z" />
   </svg>
 );
 
@@ -59,7 +77,7 @@ const Layout: Component<Props> = ({ children }) => {
             onclick={() => setOpen(!open())}
             role="button"
           >
-            {hamburgerIcon}
+            {open() ? plusIcon : minusIcon}
           </div>
         </header>
         <div class={styles.sidebar}>
