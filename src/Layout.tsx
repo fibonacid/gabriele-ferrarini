@@ -34,11 +34,6 @@ const Scheleton: Component = () => {
 const plusIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xml-space="preserve"
-    fill-rule="evenodd"
-    stroke-linejoin="round"
-    stroke-miterlimit="2"
-    clip-rule="evenodd"
     viewBox="0 0 11 11"
     width="1em"
     height="1em"
@@ -50,11 +45,6 @@ const plusIcon = (
 const minusIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    // xml-space="preserve"
-    // fill-rule="evenodd"
-    // stroke-linejoin="round"
-    // stroke-miterlimit="2"
-    // clip-rule="evenodd"
     viewBox="0 0 11 11"
     width="1em"
     height="1em"
