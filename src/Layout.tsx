@@ -1,5 +1,12 @@
-import { Link } from "solid-app-router";
-import { Component, createMemo, createSignal, JSX, Suspense } from "solid-js";
+import { Link, useLocation } from "solid-app-router";
+import {
+  Component,
+  createEffect,
+  createMemo,
+  createSignal,
+  JSX,
+  Suspense,
+} from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
 
@@ -56,6 +63,15 @@ const minusIcon = (
 const Layout: Component<Props> = ({ children }) => {
   const year = createMemo(() => new Date().getFullYear());
   const [open, setOpen] = createSignal(false);
+
+  const location = useLocation();
+
+  createEffect<string>((prev) => {
+    if (prev !== location.pathname) {
+      setOpen(false);
+    }
+    return location.pathname;
+  });
 
   return (
     <Suspense fallback={<Scheleton />}>

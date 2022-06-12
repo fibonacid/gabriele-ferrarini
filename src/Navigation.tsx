@@ -1,6 +1,6 @@
 import gsap from "gsap";
-import { Component, createResource, For, onMount } from "solid-js";
 import { NavLink } from "solid-app-router";
+import { Component, createResource, For, onMount } from "solid-js";
 import styles from "./Navigation.module.css";
 
 type Link = {
