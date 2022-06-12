@@ -91,9 +91,7 @@
 .button svg {
   transition: transform 0.3s;
 }
-.open .button svg {
-  transform: rotate(90deg);
-}
+
 
 @keyframes fade-in {
   from {

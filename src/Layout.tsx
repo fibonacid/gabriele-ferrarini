@@ -67,7 +67,7 @@ const Layout: Component<Props> = ({ children }) => {
             onclick={() => setOpen(!open())}
             role="button"
           >
-            {open() ? plusIcon : minusIcon}
+            {open() ? minusIcon : plusIcon}
           </div>
         </header>
         <div class={styles.sidebar}>
