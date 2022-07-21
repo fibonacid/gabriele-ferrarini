@@ -17,7 +17,7 @@ type Props = {
 
 const Filler: Component = () => {
   const bgColor = getRandomColor();
-  return <div class={styles.filler} style={`--bg-color: #${bgColor}`}></div>;
+  return <div class={styles.filler} style={`--bg-color: ${bgColor}`}></div>;
 };
 
 const Scheleton: Component = () => {
