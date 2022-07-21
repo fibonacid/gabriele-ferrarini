@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Component, createEffect, createResource, For } from "solid-js";
 import styles from "./Gallery.module.css";
+import { getRandomColor } from "./utils/getRandomColor";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,10 +49,6 @@ const fetchData = () => {
   });
 };
 
-const getRandomColor = () => {
-  const value = Math.floor(Math.random() * 16777215).toString(16);
-  return "#"+ value;
-}
 
 const GalleryItem: Component<Image> = (props) => {
   const { width, height, src, alt } = props;

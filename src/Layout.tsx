@@ -9,13 +9,14 @@ import {
 } from "solid-js";
 import styles from "./Layout.module.css";
 import Navigation from "./Navigation";
+import { getRandomColor } from "./utils/getRandomColor";
 
 type Props = {
   children: JSX.Element;
 };
 
 const Filler: Component = () => {
-  const bgColor = Math.floor(Math.random() * 16777215).toString(16);
+  const bgColor = getRandomColor();
   return <div class={styles.filler} style={`--bg-color: #${bgColor}`}></div>;
 };
 
