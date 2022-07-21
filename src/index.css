@@ -21,14 +21,16 @@
   --placeholder-color: #eee;
 
   /* Fonts */
-  --font-primary: 'Inter', sans-serif;
+  --font-primary: 'Open Sans', sans-serif;
 
+  
   /* Font sizes */
-  --text-xs: 0.5rem;
-  --text-sm: 0.75rem;
-  --text-md: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
+  --text-unit: 0.75rem;
+  --text-xs: calc(1 * var(--text-unit));
+  --text-sm: calc(2 * var(--text-unit));
+  --text-md: calc(3 * var(--text-unit));
+  --text-lg: calc(4 * var(--text-unit));
+  --text-xl: calc(5 * var(--text-unit));
 
   /* Z-Index */
   --index-0: 0;
