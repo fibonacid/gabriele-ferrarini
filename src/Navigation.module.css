@@ -12,11 +12,11 @@
   border-bottom: solid var(--border-color) 1px;
   background-color: var(--bg-color);
 }
-
+/* 
 .link[aria-current="page"],
 .link.active {
   text-decoration: underline;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .container {
@@ -28,7 +28,7 @@
     display: block;
     margin-bottom: 1rem;
   }
-  .link:hover {
+  /* .link:hover {
     text-decoration: underline;
-  }
+  } */
 }
