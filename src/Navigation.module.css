@@ -11,6 +11,7 @@
   padding: var(--space-sm);
   border-bottom: solid var(--border-color) 1px;
   background-color: var(--bg-color);
+  text-transform: uppercase;
 }
 /* 
 .link[aria-current="page"],
