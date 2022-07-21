@@ -72,6 +72,7 @@
   font-size: var(--text-xs);
   display: flex;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .filler {
@@ -128,5 +129,9 @@
   .open .header,
   .open .content {
     margin-left: 0;
+  }
+  .footer {
+    display: block;
+    text-align: right;
   }
 }
