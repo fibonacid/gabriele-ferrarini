@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-color: #fff;
+    --text-color: grey;
     --border-color: #ddd;
     --border-color: #333;
     --bg-color: #111;
