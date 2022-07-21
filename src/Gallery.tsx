@@ -48,14 +48,19 @@ const fetchData = () => {
   });
 };
 
+const getRandomColor = () => {
+  const value = Math.floor(Math.random() * 16777215).toString(16);
+  return "#"+ value;
+}
+
 const GalleryItem: Component<Image> = (props) => {
   const { width, height, src, alt } = props;
   const aspectRatio = width / height;
 
-  const bgColor = Math.floor(Math.random() * 16777215).toString(16);
+  const bgColor = getRandomColor()
 
   return (
-    <div class={styles.wrapper} style={`aspect-ratio: ${aspectRatio}; --bg-color: #${bgColor};`}>
+    <div class={styles.wrapper} style={`aspect-ratio: ${aspectRatio}; --bg-color: ${bgColor}`}>
       <img
         class={styles.image}
         src={src}
@@ -76,7 +81,11 @@ const Gallery: Component = () => {
 
   createEffect((prev) => {
     if (!prev && data() && container) {
-      ScrollTrigger.batch(container.children, {
+      const elements: Element[] = [];
+      [...container.children].forEach(child => {
+        elements.push(child.children[0])
+      });
+      ScrollTrigger.batch(elements, {
         onEnter: (batch) => {
           gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
         },
