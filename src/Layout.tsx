@@ -39,24 +39,15 @@ const Scheleton: Component = () => {
 };
 
 const plusIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 11 11"
-    width="1em"
-    height="1em"
-  >
-    <path fill="currentColor" d="M5 5H0v1h5v5h1V6h5V5H6V0H5v5Z" />
+  <svg height="1em" width="1em" viewBox="0 0 10 10">
+    <line x1="0" y1="5" x2="10" y2="5" style="stroke:currentColor;stroke-width:0.6" />
+    <line x1="5" y1="0" x2="5" y2="10" style="stroke:currentColor;stroke-width:0.6" />
   </svg>
 );
 
 const minusIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 11 11"
-    width="1em"
-    height="1em"
-  >
-    <path fill="currentColor" d="M0 5h11v1H0z" />
+  <svg height="1em" width="1em" viewBox="0 0 10 10">
+    <line x1="0" y1="5" x2="10" y2="5" style="stroke:currentColor;stroke-width:0.6" />
   </svg>
 );
 
