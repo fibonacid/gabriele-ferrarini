@@ -15,7 +15,7 @@ type Data = {
 
 const fetchData = () => {
   const links = [
-    { href: "/", title: "Home" },
+    { href: "/", title: "Work" },
     { href: "/about", title: "About" },
     { href: "/contacts", title: "Contacts" },
   ];

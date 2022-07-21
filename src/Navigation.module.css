@@ -13,11 +13,11 @@
   background-color: var(--bg-color);
   text-transform: uppercase;
 }
-/* 
+ 
 .link[aria-current="page"],
 .link.active {
-  text-decoration: underline;
-} */
+  color: var(--accent-color);
+}
 
 @media screen and (min-width: 768px) {
   .container {
@@ -29,7 +29,7 @@
     display: block;
     margin-bottom: 1rem;
   }
-  /* .link:hover {
-    text-decoration: underline;
-  } */
+  .link:hover {
+    color: var(--accent-color);
+  }
 }

@@ -15,7 +15,8 @@
   --footer-height: var(--space-md);
 
   /* Colors */
-  --text-color: #000;
+  --text-color: grey;
+  --accent-color: #000;
   --border-color: #ddd;
   --bg-color: #fff;
   --placeholder-color: #eee;
@@ -43,6 +44,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: grey;
+    --accent-color: #fff;
     --border-color: #ddd;
     --border-color: #333;
     --bg-color: #111;
