@@ -82,19 +82,19 @@ const Gallery: Component = () => {
       [...container.children].forEach(child => {
         elements.push(child.children[0])
       });
+
+      const fadeIn = (batch: Element[]) => {
+        gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
+      }
+      const fadeOut = (batch: Element[]) => {
+        gsap.to(batch, { opacity: 0, stagger: 0.15, duration: 0.2 });
+      }
+      
       ScrollTrigger.batch(elements, {
-        onEnter: (batch) => {
-          gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
-        },
-        onEnterBack: (batch) => {
-          gsap.to(batch, { opacity: 1, stagger: 0.15, duration: 0.2 });
-        },
-        onLeave: (batch) => {
-          gsap.to(batch, { opacity: 0, stagger: 0.15, duration: 0.2 });
-        },
-        onLeaveBack: (batch) => {
-          gsap.to(batch, { opacity: 0, stagger: 0.15, duration: 0.2 });
-        },
+        onEnter: fadeIn,
+        onEnterBack: fadeIn,
+        onLeave: fadeOut,
+        onLeaveBack: fadeOut
       });
       return true;
     }
