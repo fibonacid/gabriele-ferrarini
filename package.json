@@ -9,7 +9,7 @@
     "serve": "vite preview",
     "prepare": "cd studio && yarn",
     "studio": "cd studio && yarn start",
-    "prod-build": "cd studio && yarn build ../public/studio -y && yarn build"
+    "prod-build": "cd studio && yarn build ../public/studio -y && cd .. && yarn build"
   },
   "license": "MIT",
   "devDependencies": {
