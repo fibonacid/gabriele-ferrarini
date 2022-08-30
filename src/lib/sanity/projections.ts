@@ -8,7 +8,8 @@ export const imageProjection = /* groq */ `{
         ],
         ...dimensions {
             width,
-            height
+            height,
+            aspectRatio
         }
       }
     }
