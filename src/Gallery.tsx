@@ -17,10 +17,8 @@ const fetchData = async () => {
 type GalleryItemProps = Data["items"][0];
 
 const GalleryItem: Component<GalleryItemProps> = (props) => {
-  const { width = 1, height = 1, src, alt } = props;
-  const aspectRatio = width / height;
-
-  const bgColor = getRandomColor();
+  const { aspectRatio = 1, src, alt, colors } = props;
+  const bgColor = colors?.[0] || getRandomColor();
 
   return (
     <div

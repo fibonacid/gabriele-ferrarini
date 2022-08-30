@@ -3,6 +3,9 @@ export const imageProjection = /* groq */ `{
     ...asset->{
       "src": url,
       ...metadata {
+        "colors": [
+            palette.dominant.background
+        ],
         ...dimensions {
             width,
             height
