@@ -1,16 +1,21 @@
 export const imageProjection = /* groq */ `{
     "type": "Image",
-    "src": url,
-    "alt": alt,
-    ...metadata.dimensions{ 
-        width, 
-        height, 
-        aspectRatio
-    },
+    ...asset->{
+      "src": url,
+      ...metadata {
+        ...dimensions {
+            width,
+            height
+        }
+      }
+    }
 }`;
 
 export const galleryProjection = /* groq */ `{
     "type": "Gallery",
     "title": "Favorites",
-    "items": images[]${imageProjection}
+    "items": images[]{
+        "key": asset->._id,
+        ...${imageProjection}
+    }
 }`;
