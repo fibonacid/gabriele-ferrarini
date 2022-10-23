@@ -1,0 +1,17 @@
+---
+export type Props = {
+  message: string;
+};
+const { message } = Astro.props;
+---
+
+<footer>
+  <div class="relative flex overflow-x-hidden text-4xl text-[#ff0000]">
+    <div class="animate-marquee whitespace-nowrap">
+      <span>{message}&nbsp;&nbsp;</span>
+    </div>
+    <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
+      <span>{message}&nbsp;&nbsp;</span>
+    </div>
+  </div>
+</footer>
