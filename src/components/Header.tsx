@@ -17,7 +17,7 @@ const Header: Component<HeaderProps> = (props) => {
           role="button"
           onClick={() => setMenuOpen(!menuOpen())}
         >
-          {menuOpen() ? "+" : "-"}
+          {menuOpen() ? "-" : "+"}
         </div>
       </header>
       <HeaderNav items={props.items} />
