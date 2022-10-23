@@ -1,28 +1,18 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "prepare": "cd studio && yarn",
-    "studio": "cd studio && yarn start",
-    "prod-build": "cd studio && yarn build ../public/studio -y && cd .. && yarn build"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "typescript": "^4.6.4",
-    "vite": "^2.9.9",
-    "vite-plugin-solid": "^2.2.6"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "gsap": "^3.10.4",
-    "picosanity": "^4.0.0",
-    "reset.css": "^2.0.2",
-    "solid-app-router": "^0.3.3",
-    "solid-js": "^1.4.2",
-    "zod": "^3.18.0"
+    "@astrojs/tailwind": "^2.1.1",
+    "astro": "^1.5.2",
+    "tailwindcss": "^3.0.24"
   }
 }

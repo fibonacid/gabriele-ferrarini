@@ -1,34 +1,49 @@
-## Usage
+# Welcome to [Astro](https://astro.build)
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-```bash
-$ npm install # or pnpm install or yarn install
+![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Available Scripts
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-In the project directory, you can run:
+Any static assets, like images, can be placed in the `public/` directory.
 
-### `npm dev` or `npm start`
+## 🧞 Commands
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+All commands are run from the root of the project, from a terminal:
 
-The page will reload if you make edits.<br>
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
 
-### `npm run build`
+## 👀 Want to learn more?
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
