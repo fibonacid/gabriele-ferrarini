@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
   html,
   body {
-    height: 100%;
+    @apply h-full;
+  }
+}
+
+@layer components {
+  .heading-1 {
+    @apply text-2xl font-semibold leading-7 mb-5;
+  }
+  .paragraph {
+    @apply text-sm max-w-prose;
   }
 }
