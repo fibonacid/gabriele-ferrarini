@@ -20,7 +20,7 @@ module.exports = {
           "100%": { transform: "translateX(0%)" },
         },
       },
-      gridTemplateColumns: {
+      gridTemplateRows: {
         layout: "1fr auto",
       },
     },
