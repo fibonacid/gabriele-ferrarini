@@ -1,8 +1,15 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+
 const page = {
   name: "page",
   title: "Page",
   type: "document",
+  orderings: [orderRankOrdering],
   fields: [
+    orderRankField({ type: "page" }),
     {
       name: "title",
       title: "Title",

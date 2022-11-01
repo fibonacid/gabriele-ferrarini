@@ -16,7 +16,7 @@ const pages = await client.fetch<
     title: string;
     slug: string[];
   }[]
->(`*[_type == "page" && defined(slug.current)]{
+>(`*[_type == "page" && defined(slug.current)]|order(orderRank){
   title,
   "slug": slug.current
 }`);
