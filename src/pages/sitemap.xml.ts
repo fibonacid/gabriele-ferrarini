@@ -1,5 +1,4 @@
 import { useSanityClient } from "astro-sanity";
-import Header from "../components/Header";
 
 export async function get() {
   const publicUrl = import.meta.env.CANONICAL_URL || "http://localhost:3000";
