@@ -2,6 +2,7 @@
 import "../styles/base.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer.astro";
+import { client } from "../lib/sanity";
 
 export interface Props {
   title: string;
@@ -9,6 +10,16 @@ export interface Props {
 }
 
 const { title, navIsOpen } = Astro.props;
+
+const pages = await client.fetch<
+  {
+    title: string;
+    slug: string[];
+  }[]
+>(`*[_type == "page" && defined(slug.current)]{
+  title,
+  "slug": slug.current
+}`);
 ---
 
 <!DOCTYPE html>
@@ -25,11 +36,10 @@ const { title, navIsOpen } = Astro.props;
       client:idle
       label="Gabriele Ferrarini"
       navIsOpen={navIsOpen}
-      navItems={[
-        { label: "Work", href: "/work" },
-        { label: "About", href: "/about" },
-        { label: "Contact", href: "/contact" },
-      ]}
+      navItems={pages.map((page) => ({
+        label: page.title,
+        href: "/" + page.slug,
+      }))}
     />
     <main class="pt-header mx-12 my-16">
       <slot />
