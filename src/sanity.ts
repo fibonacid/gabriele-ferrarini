@@ -10,6 +10,7 @@ export function urlForImage(source: any) {
   return imageBuilder.image(source);
 }
 
+/** @see https://github.com/portabletext/to-html */
 const customComponents = {
   /* your custom components here */
   types: {
@@ -32,5 +33,6 @@ const customComponents = {
 };
 
 export function sanityPortableText(portabletext: any) {
+  console.log(portabletext);
   return portableTextToHtml(portabletext, customComponents);
 }

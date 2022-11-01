@@ -17,4 +17,10 @@
   .paragraph {
     @apply text-sm max-w-prose;
   }
+  .portabletext p {
+    @apply paragraph mb-4;
+  }
+  .portabletext a {
+    @apply underline;
+  }
 }
