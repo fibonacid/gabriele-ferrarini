@@ -18,6 +18,7 @@
     "@astrojs/vercel": "^2.3.3",
     "@sanity/client": "^3.4.1",
     "astro": "^1.5.2",
+    "astro-sanity": "^1.0.0",
     "solid-js": "^1.4.3",
     "tailwindcss": "^3.0.24"
   }

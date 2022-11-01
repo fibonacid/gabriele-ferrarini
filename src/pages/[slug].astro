@@ -1,17 +1,10 @@
 ---
+import { useSanityClient } from "astro-sanity";
 import Layout from "../layouts/Layout.astro";
-import { client } from "../lib/sanity";
-
-// export async function getStaticPaths() {
-//   const pages = await client.fetch<string[]>(
-//     `*[_type == "page" && defined(slug.current)].slug.current`
-//   );
-//   return pages.map((slug) => ({ params: { slug } }));
-// }
 
 const { slug } = Astro.params;
 
-const page = await client.fetch(
+const page = await useSanityClient().fetch(
   `*[_type == "page" && slug.current == $slug][0]`,
   {
     slug,
