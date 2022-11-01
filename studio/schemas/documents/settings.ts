@@ -28,5 +28,10 @@ export default {
       type: "image",
       description: "Recommended size is 1200 x 630px",
     },
+    {
+      name: "footerText",
+      title: "Footer Text",
+      type: "string",
+    },
   ],
 };
