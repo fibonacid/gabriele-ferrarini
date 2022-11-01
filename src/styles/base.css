@@ -23,4 +23,7 @@
   .portabletext a {
     @apply underline;
   }
+  .portabletext picture {
+    @apply m-auto my-10 block;
+  }
 }

@@ -25,6 +25,7 @@ const customComponents = {
             class=""
             src="${urlForImage(value.asset).url()}"
             alt="${value.alt}"
+            loading="lazy"
           />
         </picture>
       `;
