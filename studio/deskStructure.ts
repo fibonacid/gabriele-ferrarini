@@ -2,7 +2,7 @@
 
 import S from "@sanity/desk-tool/structure-builder";
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
-import { DocumentIcon } from "@sanity/icons";
+import { DocumentIcon, CogIcon } from "@sanity/icons";
 
 export default () =>
   S.list()
@@ -14,4 +14,13 @@ export default () =>
         title: "Pages",
         icon: DocumentIcon,
       }),
+      S.listItem()
+        .title("Settings")
+        .icon(CogIcon)
+        .child(
+          S.editor()
+            .documentId("settings")
+            .title("Settings")
+            .schemaType("settings")
+        ),
     ]);
