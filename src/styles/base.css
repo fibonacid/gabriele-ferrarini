@@ -6,7 +6,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
   html,
   body {
-    @apply h-full;
+    @apply h-full grid grid-rows-[1fr_auto];
   }
 }
 
