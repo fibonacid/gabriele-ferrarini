@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "studio": "cd studio && yarn start",
-    "prepare": "cd studio && yarn install"
+    "prepare": "cd studio && yarn install",
+    "vercel-build": "cd studio && yarn install && yarn sanity build ../public/studio -y && cd .. && yarn build"
   },
   "dependencies": {
     "@astrojs/solid-js": "^1.2.1",

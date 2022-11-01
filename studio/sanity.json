@@ -17,6 +17,11 @@
   "env": {
     "development": {
       "plugins": ["@sanity/vision"]
+    },
+    "production": {
+      "project": {
+        "basePath": "/studio"
+      }
     }
   },
   "parts": [
