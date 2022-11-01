@@ -2,12 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { client } from "../lib/sanity";
 
-export async function getStaticPaths() {
-  const pages = await client.fetch<string[]>(
-    `*[_type == "page" && defined(slug.current)].slug.current`
-  );
-  return pages.map((slug) => ({ params: { slug } }));
-}
+// export async function getStaticPaths() {
+//   const pages = await client.fetch<string[]>(
+//     `*[_type == "page" && defined(slug.current)].slug.current`
+//   );
+//   return pages.map((slug) => ({ params: { slug } }));
+// }
 
 const { slug } = Astro.params;
 
@@ -19,7 +19,7 @@ const page = await client.fetch(
 );
 ---
 
-<Layout title={page.title}>
+<Layout>
   <h1 class="heading-1">{page.title}</h1>
   <p class="paragraph">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

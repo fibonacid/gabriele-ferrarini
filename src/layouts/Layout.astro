@@ -5,20 +5,45 @@ import Footer from "../components/Footer.astro";
 import { client } from "../lib/sanity";
 
 export interface Props {
-  title: string;
   navIsOpen?: boolean;
 }
 
-const { title, navIsOpen } = Astro.props;
+const { navIsOpen } = Astro.props;
 
-const pages = await client.fetch<
-  {
+type Data = {
+  pages: {
     title: string;
-    slug: string[];
-  }[]
->(`*[_type == "page" && defined(slug.current)]|order(orderRank){
-  title,
-  "slug": slug.current
+    slug: string;
+  }[];
+  settings: {
+    title: string | null;
+    description: string | null;
+    image: {
+      url: string | null;
+      width: number | null;
+      height: number | null;
+    } | null;
+  };
+};
+
+const { pages, settings } = await client.fetch<Data>(`{
+  "pages": *[_type == "page" && defined(slug.current)]|order(orderRank){
+    title,
+    "slug": slug.current
+  },
+  "settings": *[_id == "settings"][0]{
+    title,
+    description,
+    image{
+      ...asset->{
+        url,
+       ...metadata.dimensions{
+          width,
+          height
+        }
+      }
+    }
+  }
 }`);
 ---
 
@@ -29,23 +54,33 @@ const pages = await client.fetch<
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{settings.title || ""}</title>
+    <meta name="description" content={settings.description || ""} />
+    <meta name="title" content={settings.description || ""} />
+    <meta property="og:description" content={settings.description || ""} />
+    <meta property="og:image" content={settings.image?.url || ""} />
+    <meta
+      property="og:image:width"
+      content={settings.image?.width?.toString() || ""}
+    />
+    <meta
+      property="og:image:height"
+      content={settings.image?.height?.toString() || ""}
+    />
   </head>
-  <body class="grid grid-rows-layout">
-    <Header
-      client:idle
-      label="Gabriele Ferrarini"
-      navIsOpen={navIsOpen}
-      navItems={pages.map((page) => ({
-        label: page.title,
-        href: "/" + page.slug,
-      }))}
-    />
-    <main class="pt-header mx-12 my-16">
-      <slot />
-    </main>
-    <Footer
-      message={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
-    />
-  </body>
+  <Header
+    client:idle
+    label="Gabriele Ferrarini"
+    navIsOpen={navIsOpen}
+    navItems={pages.map((page) => ({
+      label: page.title,
+      href: "/" + page.slug,
+    }))}
+  />
+  <main class="pt-header mx-12 my-16">
+    <slot />
+  </main>
+  <Footer
+    message={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+  />
 </html>
