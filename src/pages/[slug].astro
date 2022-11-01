@@ -1,9 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { client } from "../lib/sanity";
+
+export async function getStaticPaths() {
+  const pages = await client.fetch<string[]>(
+    `*[_type == "page" && defined(slug.current)].slug.current`
+  );
+  return pages.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+
+const page = await client.fetch(
+  `*[_type == "page" && slug.current == $slug][0]`,
+  {
+    slug,
+  }
+);
 ---
 
-<Layout title="Contact">
-  <h1 class="heading-1">Contact</h1>
+<Layout title={page.title}>
+  <h1 class="heading-1">{page.title}</h1>
   <p class="paragraph">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
