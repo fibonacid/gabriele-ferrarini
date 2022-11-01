@@ -34,6 +34,5 @@ const customComponents = {
 };
 
 export function sanityPortableText(portabletext: any) {
-  console.log(portabletext);
   return portableTextToHtml(portabletext, customComponents);
 }
