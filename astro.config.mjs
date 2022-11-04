@@ -10,9 +10,6 @@ import solidJs from "@astrojs/solid-js";
 import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
-import sanity from "astro-sanity";
-
-// https://astro.build/config
 export default defineConfig({
   output: "server",
   integrations: [
@@ -24,12 +21,6 @@ export default defineConfig({
       },
     }),
     solidJs(),
-    sanity({
-      projectId: "3xwy9afs",
-      dataset: "production",
-      useCdn: true,
-      apiVersion: "2022-11-01",
-    }),
   ],
   adapter: vercel(),
 });

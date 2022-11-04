@@ -1,38 +1,15 @@
-import {
-  portableTextToHtml,
-  useSanityClient,
-  createImageBuilder,
-} from "astro-sanity";
+import imageUrlBuilder from "@sanity/image-url";
+import SanityClient from "@sanity/client";
 
-export const imageBuilder = createImageBuilder(useSanityClient());
+export const client = SanityClient({
+  projectId: "3xwy9afs",
+  dataset: "production",
+  useCdn: true,
+  apiVersion: "2022-11-01",
+});
 
-export function urlForImage(source: any) {
-  return imageBuilder.image(source);
-}
+const builder = imageUrlBuilder(client);
 
-/** @see https://github.com/portabletext/to-html */
-const customComponents = {
-  /* your custom components here */
-  types: {
-    image: ({ value }: any) => {
-      return `
-        <picture>
-          <source
-            srcset="${urlForImage(value.asset).format("webp").url()}"
-            type="image/webp"
-          />
-          <img
-            class=""
-            src="${urlForImage(value.asset).url()}"
-            alt="${value.alt}"
-            loading="lazy"
-          />
-        </picture>
-      `;
-    },
-  },
-};
-
-export function sanityPortableText(portabletext: any) {
-  return portableTextToHtml(portabletext, customComponents);
+export function urlFor(source: any) {
+  return builder.image(source);
 }

@@ -1,9 +1,9 @@
-import { useSanityClient } from "astro-sanity";
+import { client } from "../sanity";
 
 export async function get() {
   const publicUrl = import.meta.env.CANONICAL_URL || "http://localhost:3000";
 
-  const pages: string[] = await useSanityClient().fetch(
+  const pages: string[] = await client.fetch(
     `*[_type == "page" && defined(slug.current)].slug.current`
   );
 

@@ -1,11 +1,11 @@
 ---
-import { useSanityClient } from "astro-sanity";
+import { client } from "../sanity";
 import Layout from "../layouts/Layout.astro";
 import PortableText from "../components/PortableText.astro";
 
 const { slug } = Astro.params;
 
-const page = await useSanityClient().fetch(
+const page = await client.fetch(
   `*[_type == "page" && slug.current == $slug][0]`,
   {
     slug,

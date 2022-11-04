@@ -2,7 +2,7 @@
 import "../styles/base.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer.astro";
-import { useSanityClient } from "astro-sanity";
+import { client } from "../sanity";
 
 export interface Props {
   navIsOpen?: boolean;
@@ -27,7 +27,7 @@ type Data = {
   };
 };
 
-const { pages, settings } = (await useSanityClient().fetch(`{
+const { pages, settings } = (await client.fetch(`{
   "pages": *[_type == "page" && defined(slug.current)]|order(orderRank){
     title,
     "slug": slug.current
