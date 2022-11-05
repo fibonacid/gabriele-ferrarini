@@ -6,11 +6,13 @@ const { message } = Astro.props;
 ---
 
 <footer class="overflow-hidden">
-  <div class="relative flex w-full overflow-hidden text-4xl text-[#ff0000]">
-    <div class="animate-marquee whitespace-nowrap">
+  <div class="relative w-full overflow-hidden text-3xl text-[#ff0000] h-header">
+    <div class="h-full flex items-center animate-marquee whitespace-nowrap">
       <span>{message}&nbsp;&nbsp;</span>
     </div>
-    <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
+    <div
+      class="h-full flex items-center absolute animate-marquee2 whitespace-nowrap"
+    >
       <span>{message}&nbsp;&nbsp;</span>
     </div>
   </div>
