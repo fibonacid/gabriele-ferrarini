@@ -1,0 +1,3 @@
+{
+    "rewrites": [{ "source": "/studio/:match*", "destination": "/studio/index.html" }]
+}
